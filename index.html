@@ -1,20 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Text Processor</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <title>PW summary word counter</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      background: #1e1e1e;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      resize: vertical;
+      font-family: monospace;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-box {
+      background: #1a1a1a;
+      border: 1px solid #444;
+      padding: 1rem;
+      border-radius: 6px;
+      flex: 1;
+    }
+
+    .outputs {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .output-section {
+      flex: 1;
+    }
+
+    .output-box {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      min-height: 300px;
+      margin-top: 0.5rem;
+    }
+
+    button {
+      background: #2196f3;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0.2rem;
+    }
+
+    .count-label {
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Text Processor</h1>
-  <textarea id="input" rows="10" cols="50" placeholder="Paste your text here..."></textarea><br>
-  <button onclick="processText()">Process</button>
 
-  <h3>Processed Text:</h3>
-  <pre id="output"></pre>
+  <h1>🧠 PW PS Word Counter!!!</h1>
+    <div>Word counter for project summary (PS) of H1 Project Work (PW) for A levels in Singapore JCs. Enjoy!!</div>
+    <div>note: word counter differs from google docs. you can copy paste "content" into google docs to get google doc word count. Which version's correct? idk lmaooo </div>
+    <br>
+    <div class="count-label" id="originalCount">Word count: 0</div>
+  <textarea id="inputText" placeholder="Paste your project summary here..."></textarea>
+  <button onclick="handleProcess()">Process</button>
 
-  <h3>Word Count:</h3>
-  <p id="wordCount">0</p>
+  <div class="outputs">
+    <div class="output-section">
+      <h2>Pure Content</h2>
+      <div class="count-label" id="processedCount">Word count: 0</div>
+      <div class="output-box" id="processedOutput"></div>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="output-section">
+      <h2>Cut-Out Text</h2>
+      <div class="count-label" id="cutCount">Word count: 0</div>
+      <div class="output-box" id="cutOutput"></div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_PUNCTUATION = [
+      ',', '，', '.', '。', ':', '：', ';', '；', '[', ']', '【', ']', '】', '{', '｛', '}', '｝',
+      '(', '（', ')', '）', '<', '《', '>', '》', '$', '￥', '!', '！', '?', '？', '~', '～',
+      "'", '’', '"', '“', '”',
+      '*', '/', '\\', '&', '%', '@', '#', '^', '、', '、', '、', '、'
+    ];
+
+    const EMPTY_RESULT = {
+      words: [],
+      count: 0
+    }
+
+    const wordsDetect = (text, config = {}) => {
+      if (!text) return EMPTY_RESULT;
+      let words = String(text);
+      if (words.trim() === '') return EMPTY_RESULT;
+      const punctuationReplacer = config.punctuationAsBreaker ? ' ' : '';
+      const defaultPunctuations = config.disableDefaultPunctuation ? [] : DEFAULT_PUNCTUATION;
+      const customizedPunctuations = config.punctuation || [];
+      const combinedPunctionations = defaultPunctuations.concat(customizedPunctuations);
+      // Remove punctuations or change to empty space
+      combinedPunctionations.forEach(function(punctuation) {
+        const punctuationReg = new RegExp('\\' + punctuation, 'g');
+        words = words.replace(punctuationReg, punctuationReplacer);	
+      });
+      // Remove all kind of symbols
+      words = words.replace(/[\uFF00-\uFFEF\u2000-\u206F]/g, '');
+      // Format white space character
+      words = words.replace(/\s+/, ' ');
+      // Split words by white space (For European languages)
+      words = words.split(' ');
+      words = words.filter(word => word.trim());
+      // Match latin, cyrillic, Malayalam letters and numbers
+      const common = '(\\d+)|[a-zA-Z\u00C0-\u00FF\u0100-\u017F\u0180-\u024F\u0250-\u02AF\u1E00-\u1EFF\u0400-\u04FF\u0500-\u052F\u0D00-\u0D7F]+|';
+      // Match Chinese Hànzì, the Japanese Kanji and the Korean Hanja
+      const cjk = '\u2E80-\u2EFF\u2F00-\u2FDF\u3000-\u303F\u31C0-\u31EF\u3200-\u32FF\u3300-\u33FF\u3400-\u3FFF\u4000-\u4DBF\u4E00-\u4FFF\u5000-\u5FFF\u6000-\u6FFF\u7000-\u7FFF\u8000-\u8FFF\u9000-\u9FFF\uF900-\uFAFF';
+      // Match Japanese Hiragana, Katakana, Rōmaji
+      const jp = '\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\u3190-\u319F';
+      // Match Korean Hangul
+      const kr = '\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uAFFF\uB000-\uBFFF\uC000-\uCFFF\uD000-\uD7AF\uD7B0-\uD7FF';
+      
+      const reg = new RegExp(
+        common + '[' + cjk + jp + kr + ']',
+        'g'
+      );
+      let detectedWords = [];
+      words.forEach(function(word) {
+        const carry = [];
+        let matched;
+        do {
+          matched = reg.exec(word);
+          if (matched) carry.push(matched[0])
+        } while (matched);
+        if (carry.length === 0) {
+          detectedWords.push(word);
+        } else {
+          detectedWords = detectedWords.concat(carry);
+        }
+      });
+      return {
+        words: detectedWords,
+        count: detectedWords.length
+      };
+    }
+
+    const wordsCount = (text, config = {}) => {
+      const { count } = wordsDetect(text, config);
+      return count;
+    }
+
+    const wordsSplit = (text, config = {}) => {
+      const { words } = wordsDetect(text, config);
+      return words;
+    }    
+
+    function removeSpecialBrackets(text, removedLines) {
+      return text.replace(/\(([^()]*)\)/g, (match, content) => {
+        if (/^\w+$/.test(content)) return match;
+        if (/,/.test(content) || /\b\d{4}\b/.test(content) || /fig\./i.test(content)) {
+          removedLines.push(match);
+          return "";
+        }
+        return match;
+      });
+    }
+
+    function processText(input) {
+      const lines = input.split('\n');
+      const removed = [];
+
+      const keyword = "real-world problem or opportunity identified in project & rationale";
+      let startIdx = lines.findIndex(l => l.trim().toLowerCase() === keyword);
+      let activeLines = lines;
+      if (startIdx !== -1) {
+        removed.push(...activeLines.slice(0, startIdx));
+        removed.push(...activeLines.slice(startIdx + 1, startIdx + 4));
+        activeLines = [activeLines[startIdx], ...activeLines.slice(startIdx + 4)];
+      }
+
+      const trimmed = [];
+      for (let line of activeLines) {
+        if (line.trim().toLowerCase().startsWith("reference list")) {
+          removed.push(...activeLines.slice(activeLines.indexOf(line)));
+          break;
+        }
+        trimmed.push(line);
+      }
+      activeLines = trimmed;
+
+      const clearHeaders = [
+        "Target Group of Project & Rational",
+        "Proposed Ideas & Rationale",
+        "Aim(s) of Project",
+      ];
+      activeLines = activeLines.map(line => {
+        if (clearHeaders.some(h => line.trim().toLowerCase().startsWith(h.toLowerCase()))) {
+          removed.push(line);
+          return "";
+        }
+        return line;
+      });
+
+      activeLines = activeLines.map(line => {
+        if (line.trim().toLowerCase().startsWith("fig.")) {
+          removed.push(line);
+          return "";
+        }
+        return line;
+      });
+
+      activeLines = activeLines.map(line => removeSpecialBrackets(line, removed));
+
+      const final = activeLines.filter(line => {
+        if (!/[.?!]/.test(line)) {
+          removed.push(line);
+          return false;
+        }
+        return true;
+      });
+
+      return {
+        original: input,
+        processed: final.join('\n').trim(),
+        cut: removed.join('\n').trim()
+      };
+    }
+
+    function handleProcess() {
+      const input = document.getElementById("inputText").value;
+      localStorage.setItem("userInputText", input);
+
+      const { original, processed, cut } = processText(input);
+
+      const originalCount = wordsCount(original);
+      const processedCount = wordsCount(processed);
+      const cutCount = wordsCount(cut);
+
+      document.getElementById("originalCount").innerText = `Word count: ${originalCount}`;
+      document.getElementById("processedCount").innerText = `Word count: ${processedCount}`;
+      document.getElementById("cutCount").innerText = `Word count: ${cutCount}`;
+      document.getElementById("processedOutput").innerText = processed;
+      document.getElementById("cutOutput").innerText = cut;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("userInputText");
+      if (saved) {
+        document.getElementById("inputText").value = saved;
+        handleProcess();
+      }
+
+      document.getElementById("inputText").addEventListener("input", () => {
+        localStorage.setItem("userInputText", document.getElementById("inputText").value);
+      });
+    });
+  </script>
+
 </body>
 </html>

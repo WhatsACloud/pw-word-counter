@@ -28,7 +28,7 @@ If yes, indicate the organisation:
 
 Word Count 
 (excludes citations, references, captions for tables and diagrams, annexes)
-1185
+1230
 
 
 
