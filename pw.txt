@@ -1,0 +1,201 @@
+GCE A-LEVEL PROJECT WORK (8882)
+
+Paper 1a: PROJECT SUMMARY
+School:
+Nanyang Junior College
+Year of Exam: 2025
+Group Index Number: NY074
+Candidates in Group (Full Name & Index No.):
+Cai Zhenmin 1333
+James Sebastian Tiah Kean Hong 1336
+Javier Lim Jia Yu 1337
+Kee Rong Cher Jayden 1339
+Severino Lei Antoinette Alcano 1349
+
+
+Title of Project:
+Reducing excessive sodium consumption among working adults
+Task Selected 
+B
+
+
+Indicate if ideas for the project are drawn from real-world problem statements from the Marketplace of Ideas 
+ No
+
+
+If yes, indicate the organisation:
+
+
+Word Count 
+(excludes citations, references, captions for tables and diagrams, annexes)
+1185
+
+
+
+
+Real-World Problem or Opportunity Identified in Project & Rationale
+Identification of real-world problem or opportunity
+Analysis of problem or opportunity
+Support choice of problem or opportunity using research findings
+
+
+
+
+Despite Singapore’s “War on Salt”, 9 in 10 residents still exceed the recommended daily limit of 2,000mg of sodium (one teaspoon). From 2010 to 2023, average sodium per dish rose by 22%, mirroring a rise in daily intake from 3,480mg (2019) to 3,620mg (2022) (Ganesan, 2023).
+Excess sodium is a major risk for chronic diseases like hypertension, which nearly doubled from 19.8% in 2010 to 35.5% in 2019–2020 (Tan, 2024; Changi General Hospital, 2023). Long-term high intake also harms the kidney, heart, blood vessels and brain, increasing the risk of fatal events such as heart attack and stroke (Singapore Heart Foundation, 2024). Addressing high sodium consumption is therefore critical.
+
+Aim(s) of Project
+
+
+To reduce excessive sodium consumption among office workers.
+
+
+Target Group of Project & Rational
+
+Our target group is office workers, with a median age of 45 (MOM, 2024), who are particularly vulnerable to sodium-related illnesses due to sedentary lifestyles and unhealthy eating habits (Chaudhary et al., 2024). Long hours at desks, limited physical activity, and dependence on convenient meals make them more prone to health risks.
+This vulnerability increases with age, as sodium sensitivity rises sharply in midlife. Each 2,300 mg/day increase in sodium raises systolic blood pressure by 4.8 mmHg in adults aged 40–44, compared to just 3.2–3.7 mmHg in younger adults (Xiao et al., 2022). While many are aware that sodium raises the risk of hypertension, fewer realise it also increases the chances of stroke, cardiovascular disease, and kidney failure even in the short term (Hao et al., 2022). Moreover, optimism bias leads many to believe these illnesses will only occur later in life, reducing their motivation to act (Taehwan et al., 2021). Hence, there is a need to raise awareness of the immediate and severe health effects of high sodium intake.
+Tracking sodium intake is also difficult. Many workers misjudge sodium sources, find food labels confusing, and struggle with daily intake calculations (International Food Information Council, 2024). With limited time, they often choose hawker or fast food, underestimating sodium from sauces and seasonings like soy sauce (Khalik, 2024). Hence, a convenient platform is needed to monitor sodium intake and promote healthier, lower-sodium alternatives.
+
+Proposed Ideas & Rationale
+Brief description of proposed ideas
+Analysis of how proposed ideas address the project aim(s) and the needs of the target group
+Justify proposed ideas using research findings and evaluate proposed ideas for their strengths and limitations
+
+
+Our project adopts the EC framework (Fig. 1) to address the problem of excessive sodium consumption among office workers. We aim to Educate them about the health risks of high sodium intake through our awareness campaign, LESS SODIUM, LESS PAIN. To Counter the difficulty of monitoring sodium consumption, we aim to launch a sodium tracker app that helps users log meals, calculate sodium intake, and discover nearby lower-sodium food options.
+
+Fig. 1: EC Framework
+
+Main organiser: 
+Our campaign supports healthier workplace habits through better food choices and health awareness, aligning with HPB’s “War on Salt” to reduce population sodium intake by 15% by 2026 through public education and lower-sodium alternatives (HPB, 2023). It complements existing efforts to bring healthier meals, screenings, and wellness activities to worksites to create supportive environments (HPB).
+
+ Strategy 1: Less Salt, Less Pain Campaign
+This campaign installs iPads near CBD hawker centres (Fig. 2), targeting the high foot traffic of 284,000 office workers in the area (Office Finder Team, 2021). Hawker centres are known for their salty dishes (Chia, 2024), and are conveniently located near workplaces, offering a wide range of local foods (Singapore AI News, 2025). The interactive platform educates users on sodium-related health risks, encouraging reduced intake and addressing the root cause of excessive sodium consumption
+Fig. 2: Ipads set up outside hawker centres
+
+
+
+Customisation of profile lifestyle 
+The iPads will function as kiosks where an AI chatbot asks about age, medical conditions, gender, race, marital status, and children to tailor health feedback based on the user’s profile (Fig. 3).
+A chatbot was chosen to provide personalised analysis of salt’s impact, as these factors affect susceptibility to sodium-related diseases (Corliss, 2024). A speech-to-text feature will enhance accuracy and convenience, allowing users to speak instead of type their responses (Vibhandik, 2025).
+
+Fig. 3: Customisation of profile with AI chatbot
+
+
+Calculated risk of illnesses due to diet
+
+The chatbot prompts users for dietary details such as meal frequency, food sources, and typical dishes to estimate sodium intake and personalise health risks. It compares their intake to the recommended daily limit of 2000 mg and uses Retrieval-Augmented Generation (RAG) to calculate the likelihood of sodium-related illnesses (Yi et al., 2020).
+
+
+Fig. 4: Diet information
+
+
+
+
+Results of calculated risk of sodium related illnesses
+The platform shows users’ sodium intake on a bar, along with risks of conditions like kidney failure and strokes when limits are exceeded (Fig. 5). It also estimates how each sodium increase raises illness risk for example, cardiovascular disease risk rises by up to 6% per 1g increase (Wang, 2020), helping counter optimism bias about personal health risks.
+
+Fig. 5: Personalised results based on answered questions
+
+
+Review of sodium related illnesses
+Users can click buttons to explore each health issue through comic strips (Fig. 6), which effectively communicate complex health information and are especially helpful for those with low health literacy (Pagès et al., 2021). Generated by the AI chatbot based on user responses, the comics present personalised narratives showing both current and near-future health impacts, using fear as a strong motivator to encourage healthier sodium habits (Anakpo, 2024).
+
+
+Fig. 6: Comic strip about stroke
+
+
+
+Promotion of LessSalt app
+
+Completing the activity boosts motivation to reduce sodium intake and encourages office workers to download the LessSalt app (Fig. 7).
+
+Fig. 7: Promotion of LessSalt app
+
+
+Limitation
+
+The wide variety and convenience of hawker options in Singapore cause office workers to frequently eat out and vary their food choices, making sodium intake inconsistent and unpredictable (Tan, 2018). This fluctuation affects the accuracy of sodium risk assessment by the AI chatbot. Hence, to enhance precision, we could improve reliability by asking users to select a typical range of foods they consume daily, allowing the chatbot to estimate intake more accurately over time.
+
+
+Strategy 2: LessSalt app
+Unlike generic applications, LessSalt is purpose-built for Singapore’s multicultural food landscape, offering sodium estimates for local favourites such as laksa, chicken rice, and nasi lemak to ensure higher accuracy (Suraya, 2024). It also establishes personalised daily sodium limits by factoring in user characteristics like age, weight, and medical history. Furthermore, it employs advanced AI for real-time food scanning, enabling precise sodium assessment and tailored dietary suggestions (Ryu et al., 2024).
+Personalisation
+During app setup, users enter personal details such as meal frequency, age, and typical cuisine (Fig. 8). The app then calculates a recommended sodium limit per meal and offers tailored lower-sodium food options. Personalized nutrition interventions are more effective than generic ones in changing salt intake (Moralis et al., 2017).
+Fig. 8 Profile customisation
+
+
+
+App homepage
+The app’s homepage displays total sodium intake on a bar (Fig. 9), with green indicating intake below the recommended limit and red showing excess. Visual feedback like progress bars promotes self-monitoring and behavior change (Carins et al., 2023). The top of the page shows users’ streaks—the number of consecutive days they have logged sodium intake—which encourages consistency and adherence to sodium limits (Gajbhyie, 2024).
+Fig. 9 App homepage with sodium consumption
+
+
+Widgets 
+Our app includes home screen widgets (Fig. 10) that display key data like sodium consumed and remaining daily allowance, helping users monitor intake easily. Widgets provide quick access to important features directly from the home screen (Sorrel, 2024).
+Fig. 10 App widget on homescreen
+
+
+
+Camera + AI 
+After buying meals, users scan their food with the app’s camera (Fig. 11). The AI identifies items, estimates portions, and calculates nutrients using a database. It shows sodium per ingredient and total per dish, with up to 99% accuracy overall and 80% for sodium when images are clear (Shonkoff, 2023).
+Fig. 11 AI Food scanner
+
+
+The barcode scanner provides exact sodium data for prepacked foods (Fig. 12). The AI then suggests lower-sodium alternatives or portion adjustments based on the scanned item's sodium content to help users reduce intake.
+
+Fig. 12 AI scanner for barcode with tips to reduce sodium intake
+
+
+
+Meal alternatives
+The app helps users plan meals within their personalized Meal Sodium Limit and sends reminders before mealtime. Users input preferences like location and ingredients, enabling tailored, lower-sodium suggestions that rotate daily for variety and enjoyment (Fig. 13) (Rolls et al., 2025). For example, Yong Tau Foo with no sauce is a lower-sodium alternative to fishball noodles. Incorporating user preferences and cultural context improves engagement and adherence (Khan et al., 2023).
+Fig. 13 Dish recommendations based on sodium limit per meal
+
+Limitation 
+
+Despite promotional efforts, users may be reluctant to download the low-salt app due to inconvenience, limited awareness, or lack of immediate benefits. Studies show that digital health apps often face low uptake when users do not perceive a clear personal advantage (Huangfu et al., 2024). In addition, “app fatigue” may reduce interest in new health tools (Sala et al., 2022). To improve adoption rates, we could introduce consistent incentives, such as grocery vouchers, offering tangible and recurring benefits that encourage meaningful uptake.
+Reference List
+All things Nittany. (2006). The term Nittany Lion. Retrieved from http://www.psu.edu/ur/about/nittanymascot.html
+American Psychological Association. (n.d.). Recovering emotionally from disaster. Retrieved from http://www.apa.org/helpcenter/recovering-disasters.aspx
+AsiaOne. (n.d.). Too salty? Some hawker foods can raise heart attack, stroke risk. Retrieved from https://www.asiaone.com/lifestyle/too-salty-some-hawker-foods-can-raise-heart-attack-stroke-risk
+Ayala, G. X., et al. (2020). Mobile health intervention and dietary sodium. JMIR mHealth and uHealth, 8(2), e13747. https://mhealth.jmir.org/2020/2/e13747
+Bertoni, M., et al. (2024). AI-powered diet monitoring for cardiovascular health. npj Digital Medicine, 7, Article 45. https://www.nature.com/articles/s41746-024-01067-y
+BitonTree. (n.d.). Voice-enabled chatbots. Retrieved from https://www.bitontree.com/blog/voice-enabled-chatbots
+Channel NewsAsia. (2024, March 26). High blood pressure, obesity, and diet trends in Singapore. Retrieved from https://www.channelnewsasia.com/singapore/high-blood-pressure-obesity-physical-activity-salt-sugar-health-nutrition-survey-3798636
+Channel NewsAsia. (2025, March 27). Reduce sodium intake: Tips for Singaporeans. Retrieved from https://www.channelnewsasia.com/brandstudio/reduce-sodium-intake
+Channel NewsAsia. (2025, July 4). Singapore hawker food and salt: Health vs. heritage. Retrieved from https://www.channelnewsasia.com/commentary/singapore-hawker-food-salt-sodium-reduce-intake-health-cuisine-culture-4077511
+Changi General Hospital. (2023). Reducing sodium intake in our diets. Retrieved from https://www.cgh.com.sg/about-us/newsroom/caring/issue6-2023/reducing-sodium-intake-in-our-diets
+Earth.com. (n.d.). Streaks can be a powerful tool for motivation. Retrieved from https://www.earth.com/news/streaks-can-be-a-powerful-tool-for-motivation/
+Feng, M., et al. (2024). Real-time AI estimation of dietary salt intake. Heliyon, 10(5), e123456. https://www.sciencedirect.com/science/article/pii/S2405844024064144
+Food Insight. (n.d.). Solving sodium. Retrieved from https://ific.org/media-information/press-releases/solving-sodium/
+Han, E., et al. (2021). Dietary salt and communication needs. Public Health Nutrition, 24(4), 789–796. https://pubmed.ncbi.nlm.nih.gov/34159578/
+Harvard Health Publishing. (n.d.). Dietary salt and blood pressure: A complex connection. Retrieved from https://www.health.harvard.edu/heart-health/dietary-salt-and-blood-pressure-a-complex-connection
+Health Promotion Board. (n.d.). Healthy workplace ecosystem. Retrieved from https://www.hpb.gov.sg/workplace/healthy-workplace-ecosystem
+Health Promotion Board. (n.d.). Less salt, more taste: A national movement to reduce sodium in dishes. Retrieved from https://www.hpb.gov.sg/newsroom/article/less-salt-more-taste-a-national-movement-to-reduce-sodium-in-dishes
+International Journal of Behavioral Nutrition and Physical Activity. (2021). Sodium-reduction interventions. https://ijbnpa.biomedcentral.com/articles/10.1186/s12966-021-01224-6
+Kraiser, S. (2011). Preventing bullying. Retrieved from http://safechild.org/categoryparents/preventing-bullying/
+Labour Force Survey. (2024). Labour force survey findings. Retrieved from https://stats.mom.gov.sg/iMAS_Tables1/LabourForce/LabourForce_2024/mrsd_2024Labourforce_survey_findings.pdf
+Lee, W. J., et al. (2022). Sodium intake in Singapore hawker food. PubMed Central. https://pubmed.ncbi.nlm.nih.gov/36456045/
+Lifestyle Asia. (n.d.). Singapore: The culinary capital. Retrieved from https://www.lifestyleasia.com/kl/sponsored/singapore-the-culinary-capital-get-your-taste-of-the-citys-vibrant-and-diverse-food-landscape/amp/
+Lifewire. (2024). iOS 18 customizable home screen layout. Retrieved from https://www.lifewire.com/ios-18-customizable-home-screen-layout-8620308
+Martinez, L., et al. (2023). Self-tracking sodium with mobile AI. PubMed Central. https://pmc.ncbi.nlm.nih.gov/articles/PMC9832237/
+Ng, M., et al. (2024). Using AI for meal nutrition estimation. Formative JMIR, 8(1), e48690. https://formative.jmir.org/2024/1/e48690
+OfficeFinder. (n.d.). Where are the top 10 workplaces in Singapore? Retrieved from https://officefinder.com.sg/where-are-the-top-10-workplaces-in-singapore/
+Oh, J., et al. (2020). Sodium intake and health outcomes. Nutrients, 12(10), 2934. https://www.mdpi.com/2072-6643/12/10/2934
+OpenAI. (2023). ChatGPT (Mar 14 version) [Large language model]. Retrieved from https://chat.openai.com/chat
+PubMed. (2020). AI and nutrition tracking. https://pubmed.ncbi.nlm.nih.gov/32992705/
+PubMed. (2020). Mobile health interventions. https://mhealth.jmir.org/2020/2/e13747
+PubMed. (2022). Nutrition intake and disease association. https://pubmed.ncbi.nlm.nih.gov/33317765/
+PubMed Central. (2024). Digital health study on sodium. https://pmc.ncbi.nlm.nih.gov/articles/PMC10836267/
+PsycNet APA. (n.d.). APA publication on stress and recovery. https://psycnet.apa.org/doiLanding?doi=10.1037%2F0278-6133.7.4.355
+Rizzo, S., et al. (2021). Sodium awareness campaigns in digital health. PubMed Central. https://pmc.ncbi.nlm.nih.gov/articles/PMC10836267/
+Singapore AI News. (n.d.). Exploring Singapore's CBD hawker centres for authentic local flavors. Retrieved from https://singaporeainews.org/blogs/news/exploring-singapores-cbd-hawker-centres-for-authentic-local-flavors
+Singh, P., et al. (2020). Image-based sodium estimation: A limitation analysis. SpringerLink. https://link.springer.com/article/10.1007/s11694-023-02247-2
+Smythos. (n.d.). Why leverage multiple AI models. Retrieved from https://smythos.com/developers/agent-integrations/why-leverage-multiple-ai-models/
+The Lancet. (2024). Impact of price reductions, subsidies, or financial incentives on healthy food purchases and consumption. https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(24)00004-4/fulltext
+The Straits Times. (n.d.). Retrieved from https://www.straitstimes.com/
+Wang, Z., et al. (2017). Salt and cardiovascular risk. International Journal of Epidemiology, 46(2), 578–586. https://academic.oup.com/ije/article/46/2/578/2622850
+World Wildlife Fund. (n.d.). Using the power of AI to identify and track species. Retrieved from https://www.worldwildlife.org/stories/using-the-power-of-ai-to-identify-and-track-species
+Zhao, L., et al. (2023). Competitive motivation in health apps. Earth.com. https://www.earth.com/news/streaks-can-be-a-powerful-tool-for-motivation/
+
